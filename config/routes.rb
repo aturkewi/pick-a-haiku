@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  get '/' => 'haikus#index', as: 'haikus'
+
+  get '/' => 'apps#index', as: 'root'
+  get '/about' => 'apps#about', as:'about'
+
+  get '/haikus/index' => 'haikus#index', as: 'haikus'
   get 'haikus/new' => 'haikus#new', as: 'new_haiku'
-  post '/' => 'haikus#create'
+  post '/haikus/index' => 'haikus#create'
   put '/haikus/:id' => 'haikus#update', as:'update_haiku'
   get 'haikus/comparison' => 'haikus#comparison', as: 'comparison'
   # The priority is based upon order of creation: first created -> highest priority.
