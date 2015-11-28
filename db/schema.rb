@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20151126012141) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "haikus", force: :cascade do |t|
     t.string   "line1"
     t.string   "line2"
