@@ -1,0 +1,32 @@
+<%= form_for(@haiku) do |f| %>
+  <% if @haiku.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@haiku.errors.count, "error") %> prohibited this haiku from being saved:</h2>
+
+      <ul>
+      <% @haiku.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :line1 %><br>
+    <%= f.text_field :line1 %>
+  </div>
+  <div class="field">
+    <%= f.label :line2 %><br>
+    <%= f.text_field :line2 %>
+  </div>
+  <div class="field">
+    <%= f.label :line3 %><br>
+    <%= f.text_field :line3 %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :compGen, value:false %><br>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

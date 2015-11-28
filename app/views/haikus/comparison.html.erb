@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="text-center">
+    <h1>CHOOSE YOUR FAVORITE HAIKU</h1>
+  </div>
+  <div class="text-center col-xs-6">
+    <h2>Haiku 1</h2>
+    <%= render partial: 'show', locals:{haiku: @haiku1} %>
+    <%= button_to "Like", update_haiku_path(@haiku1), method:'put', class:'btn btn-success'%>
+  </div>
+  <div class="text-center col-xs-6">
+    <h2>Haiku 2</h2>
+    <%= render partial: 'show', locals:{haiku: @haiku2} %>
+    <%= button_to "Like", update_haiku_path(@haiku2), method:'put', class:'btn btn-success'%>
+  </div>
+
+</div>

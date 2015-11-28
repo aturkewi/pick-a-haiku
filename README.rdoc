@@ -1,0 +1,31 @@
+== README
+
+# Pick-A-Haiku
+
+This app well have some pre-generated haikus along with an option for users to add haikus.
+Users will also be show two haikus and be able to choose witch they like more.
+This will allow people to see if users prefer human created haikus, or randomly generated ones.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
