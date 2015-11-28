@@ -1,26 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Haikus</h1>
+<h1>Top Haikus</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Haiku</th>
-      <th>Likes</th>
-      <th>Compgen</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @haikus.each do |haiku| %>
-      <tr>
-        <td>
-          <%= render partial: 'show', locals:{haiku: haiku} %>
-        </td>
-        <td><%= haiku.likes %></td>
-        <td><%= haiku.compGen %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="row text-center">
+  <% @haikus.each do |haiku| %>
+    <div class="col-xs-2">
+      <p>
+        <%= haiku.likes %> likes
+      </p>
+      <p>
+        <%= render partial: 'show', locals:{haiku: haiku} %>
+      </p>
+      <p>
+        <!-- Refactor to view object -->
+        <%if haiku.compGen%>
+          Computer Generated
+        <%else%>
+          Human Crafted
+        <% end %>
+      </p>
+    </div>
+  <% end %>
+</div>

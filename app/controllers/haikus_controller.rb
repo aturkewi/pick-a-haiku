@@ -4,7 +4,7 @@ class HaikusController < ApplicationController
   # GET /haikus
   # GET /haikus.json
   def index
-    @haikus = Haiku.order(likes: :desc).limit(10)
+    @haikus = Haiku.order(likes: :desc).limit(6)
   end
 
   def comparison
