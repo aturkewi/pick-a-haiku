@@ -27,6 +27,7 @@ class HaikusController < ApplicationController
 
     respond_to do |format|
       if @haiku.save
+        Haiku.make_from_gem
         format.html { redirect_to haikus_path, notice: 'Haiku was successfully created.' }
       else
         format.html { render :new }
@@ -58,6 +59,7 @@ class HaikusController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def haiku_params
-      params.require(:haiku).permit(:line1, :line2, :line3, :likes, :compGen)
+      params.require(:haiku).permit(:line1, :line2, :line3, :likes, :user_id)
     end
+
 end

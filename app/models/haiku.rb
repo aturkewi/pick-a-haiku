@@ -20,7 +20,7 @@ class Haiku < ActiveRecord::Base
     first_line = HaikuGadget.top_line
     second_line = HaikuGadget.middle_line
     third_line = HaikuGadget.bottom_line
-    create(line1: first_line, line2: second_line, line3: third_line, compGen: true)
+    create(line1: first_line, line2: second_line, line3: third_line, user_id: 1)
   end
 
   def self.get_two_random_haikus
