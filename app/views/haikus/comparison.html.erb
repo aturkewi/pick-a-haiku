@@ -12,5 +12,7 @@
     <%= render partial: 'show', locals:{haiku: @haiku2} %>
     <%= button_to "Like", update_haiku_path(@haiku2), method:'put', class:'btn btn-success'%>
   </div>
-
+</div>
+<div class="row text-center">
+    <%= button_to "These Are Both Terrible", comparison_path, method:'get', class:'btn btn-warning'%>
 </div>
