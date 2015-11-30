@@ -1,10 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Top Haikus</h1>
+<h1 class="text-center">Top Haikus</h1>
 
 <div class="row text-center">
   <% @haikus.each do |haiku| %>
-    <div class="col-xs-2">
+    <div class="col-xs-3">
       <p>
         <%= haiku.likes %> likes
       </p>
