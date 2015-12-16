@@ -44,6 +44,9 @@ GEM
       debug_inspector (>= 0.0.1)
     bootswatch-rails (3.3.5)
       railties (>= 3.1)
+    browserify-rails (2.0.2)
+      railties (>= 4.0.0, < 5.0)
+      sprockets (> 3.0.2)
     builder (3.2.2)
     byebug (8.2.0)
     coderay (1.1.0)
@@ -155,6 +158,7 @@ PLATFORMS
 DEPENDENCIES
   annotate
   bootswatch-rails
+  browserify-rails
   byebug
   coffee-rails (~> 4.1.0)
   haiku_gadget

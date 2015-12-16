@@ -1,0 +1,6 @@
+{
+  "name": "pick-a-haiku",
+  "dependencies": {
+    "syllable": "~> 0.1.4"
+  }
+}

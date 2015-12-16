@@ -5,6 +5,7 @@ gem 'haiku_gadget'
 gem 'pry'
 gem 'ruby_rhymes'
 gem 'bootswatch-rails'
+gem "browserify-rails"
 
 gem 'pg'
 

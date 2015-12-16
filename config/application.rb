@@ -12,6 +12,15 @@ module PickAHaiku
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
+
+    # By default only files in /app and /node_modules are browserified,
+    # vendor stuff is normally not made for browserification and may stop
+    # working.
+    config.browserify_rails.paths << /vendor\/assets\/javascripts\/module\.js/
+
+    config.browserify_rails.commandline_options = "-t coffeeify --extension=\".js.coffee\""
+    # We don't want the default of everything that isn't js or css, because it pulls too many things in
+
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
