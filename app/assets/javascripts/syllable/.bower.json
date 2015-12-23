@@ -1,0 +1,53 @@
+{
+  "name": "syllable",
+  "main": "index.js",
+  "description": "Syllable count in an English word",
+  "license": "MIT",
+  "keywords": [
+    "detect",
+    "syllables",
+    "natural",
+    "language",
+    "cli",
+    "bin"
+  ],
+  "dependencies": {
+    "pluralize": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wooorm/syllable.git"
+  },
+  "authors": [
+    "Titus Wormer <tituswormer@gmail.com>"
+  ],
+  "ignore": [
+    ".*",
+    "*.log",
+    "*.md",
+    "*.sh",
+    "build/",
+    "components/",
+    "coverage/",
+    "node_modules/",
+    "test/",
+    "component.json",
+    "package.json",
+    "benchmark.js",
+    "build.js",
+    "cli.js",
+    "example.js"
+  ],
+  "homepage": "https://github.com/wooorm/syllable",
+  "version": "0.1.4",
+  "_release": "0.1.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.4",
+    "commit": "33b64a761cd6b8c7f08a90ec1b0f509d4a9f4075"
+  },
+  "_source": "git://github.com/wooorm/syllable.git",
+  "_target": "~0.1.4",
+  "_originalSource": "syllable",
+  "_direct": true
+}
