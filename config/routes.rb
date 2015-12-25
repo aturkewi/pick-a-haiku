@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
   get '/' => 'apps#index', as: 'root'
   get '/about' => 'apps#about', as:'about'
 
