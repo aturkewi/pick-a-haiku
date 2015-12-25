@@ -7,6 +7,7 @@ gem 'ruby_rhymes'
 gem 'bootswatch-rails'
 gem 'omniauth-facebook', '~> 1.4.1'
 gem 'figaro'
+gem 'better_errors'
 
 gem 'pg'
 
