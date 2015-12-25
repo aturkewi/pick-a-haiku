@@ -5,6 +5,7 @@ gem 'haiku_gadget'
 gem 'pry'
 gem 'ruby_rhymes'
 gem 'bootswatch-rails'
+gem 'omniauth-facebook', '~> 1.4.1'
 
 gem 'pg'
 
