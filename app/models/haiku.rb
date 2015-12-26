@@ -14,6 +14,9 @@
 
 class Haiku < ActiveRecord::Base
 
+  has_many :likes
+  belongs_to :user
+
   validates_with SyllableValidator
 
   def self.make_from_gem
