@@ -6,10 +6,9 @@
 #  line1      :string
 #  line2      :string
 #  line3      :string
-#  likes      :integer
-#  compGen    :boolean
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  user_id    :integer
 #
 
 require 'test_helper'

@@ -3,17 +3,17 @@
 <h1 class="text-center">Top Haikus</h1>
 
 <div class="row text-center">
-  <% @haikus.each do |haiku| %>
+  <% @haikus.each do |haiku_hash| %>
     <div class="col-xs-3">
       <p>
-        <%= haiku.likes %> likes
+        <%= haiku_hash[:likes] %> likes
       </p>
       <p>
-        <%= render partial: 'show', locals:{haiku: haiku} %>
+        <%= render partial: 'show', locals:{haiku: haiku_hash[:haiku]} %>
       </p>
       <p>
         <!-- Refactor to view object -->
-        <%if haiku.user_id == 1%>
+        <%if haiku_hash[:haiku].user_id == 1%>
           Computer Generated
         <%else%>
           Human Crafted

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  post 'likes/:haiku_id', to: 'likes#create', as: 'add_like'
+
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
@@ -12,7 +14,7 @@ Rails.application.routes.draw do
   get '/haikus/index' => 'haikus#index', as: 'haikus'
   get 'haikus/new' => 'haikus#new', as: 'new_haiku'
   post '/haikus/index' => 'haikus#create'
-  put '/haikus/:id' => 'haikus#update', as:'update_haiku'
+  # put '/haikus/:id' => 'haikus#update', as:'update_haiku'
   get 'haikus/comparison' => 'haikus#comparison', as: 'comparison'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
