@@ -14,7 +14,7 @@ class HaikusController < ApplicationController
     respond_to do |format|
       binding.pry
       format.html
-      format.json render json: @haikus
+      format.json {render @haikus}
     end
   end
 
