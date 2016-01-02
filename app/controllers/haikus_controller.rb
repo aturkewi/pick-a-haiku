@@ -8,9 +8,14 @@ class HaikusController < ApplicationController
   end
 
   def comparison
-    haikus = Haiku.get_two_random_haikus
-    @haiku1 = haikus[0]
-    @haiku2 = haikus[1]
+    @haikus = Haiku.get_two_random_haikus
+    # @haiku1 = haikus[0]
+    # @haiku2 = haikus[1]
+    respond_to do |format|
+      binding.pry
+      format.html
+      format.json render json: @haikus
+    end
   end
 
 

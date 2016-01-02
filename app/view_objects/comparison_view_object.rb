@@ -1,0 +1,3 @@
+class ComparisonViewObject
+
+end
