@@ -1,3 +1,3 @@
-$(function() {
-  console.log('I am here')
-})
+// $(function() {
+//   console.log('I am here')
+// })
