@@ -12,9 +12,9 @@ class HaikusController < ApplicationController
     # @haiku1 = haikus[0]
     # @haiku2 = haikus[1]
     respond_to do |format|
-      binding.pry
+      # binding.pry
       format.html
-      format.json {render @haikus}
+      format.json {render json: @haikus}
     end
   end
 
