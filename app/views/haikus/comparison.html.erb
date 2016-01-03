@@ -2,22 +2,13 @@
   <div class="text-center">
     <h1>CHOOSE YOUR FAVORITE HAIKU</h1>
   </div>
-  <div class="text-center col-xs-6">
-    <h2>Haiku 1</h2>
-    <%= render partial: 'show', locals:{haiku: @haikus[0]} %>
-    <%= button_to "Like", add_like_path(@haikus[0]), method:'post', class:'btn btn-success'%>
+
+  <div id='compare_haikus'>
   </div>
-  <div class="text-center col-xs-6">
-    <h2>Haiku 2</h2>
-    <%= render partial: 'show', locals:{haiku: @haikus[1]} %>
-    <%= button_to "Like", add_like_path(@haikus[1]), method:'post', class:'btn btn-success'%>
+  <div class="row text-center">
+    <%= button_to "These Are Both Terrible", comparison_path, method:'get', class:'btn btn-warning'%>
   </div>
 </div>
 
-<div id='compare_haikus'>
-</div>
-<div class="row text-center">
-  <%= button_to "These Are Both Terrible", comparison_path, method:'get', class:'btn btn-warning'%>
-</div>
 
 <%= render 'show_handlebars' %>
