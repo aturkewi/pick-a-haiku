@@ -7,15 +7,23 @@ $(document).on('page:load ready',function(){
 });
 
 function addHaikus(haikus){
-  debugger;
+  haikus.forEach(function(haiku){
+    addHaiku(haiku);
+  })
+}
+
+function likeListener(){
+  $('.add-like').on('ajax:success',function(event, data, status, xhr){
+    debugger;
+  })
 }
 
 function addHaiku(haiku){
   var source = $('#haiku-template').html();
   var template = Handlebars.compile(source);
   var haiku_html = template(haiku);
-  debugger;
-  $('#haikus').append(reservations_html);
+  $('#compare_haikus').append(haiku_html);
+  likeListener();
 }
 
 function isComparisonPage(self){

@@ -13,8 +13,11 @@
     <%= button_to "Like", add_like_path(@haikus[1]), method:'post', class:'btn btn-success'%>
   </div>
 </div>
+
+<div id='compare_haikus'>
+</div>
 <div class="row text-center">
-    <%= button_to "These Are Both Terrible", comparison_path, method:'get', class:'btn btn-warning'%>
+  <%= button_to "These Are Both Terrible", comparison_path, method:'get', class:'btn btn-warning'%>
 </div>
 
 <%= render 'show_handlebars' %>
