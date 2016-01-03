@@ -1,0 +1,12 @@
+<script id="haiku-template" type="text/x-handlebars-template">
+  <div class="text-center col-xs-6">
+    <h2>Haiku</h2>
+    <p>
+      {{line1}}<br>
+      {{line2}}<br>
+      {{line3}}
+    </p>
+    <a href="/likes/{{id}}" data-method='post'  data-remote="true" class='btn btn-success add-like'>Like</a>
+    <!--$('meta[name="csrf-token"]')-->
+  </div>
+</script>

@@ -14,7 +14,8 @@ function addHaikus(haikus){
 
 function likeListener(){
   $('.add-like').on('ajax:success',function(event, data, status, xhr){
-    debugger;
+    $('#compare_haikus').html('');
+    addHaikus(data);
   })
 }
 
