@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'users/show'
+
   post 'likes/:haiku_id', to: 'likes#create', as: 'add_like'
 
   get 'auth/:provider/callback', to: 'sessions#create'
