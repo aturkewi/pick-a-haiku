@@ -1,2 +1,4 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<center>
+<h1><%=current_user.name%></h1>
+<img src=<%="http://graph.facebook.com/#{current_user.uid}/picture?type=large"%>
+</center>
