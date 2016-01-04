@@ -1,4 +1,21 @@
-<center>
-<h1><%=current_user.name%></h1>
-<img src=<%="http://graph.facebook.com/#{current_user.uid}/picture?type=large"%>
-</center>
+<div class="row">
+  <center>
+    <h1><%=current_user.name%></h1>
+    <img src=<%="http://graph.facebook.com/#{current_user.uid}/picture?type=large"%>
+  </center>
+</div>
+
+<div class="row">
+
+  <div class="col-xs-4 text-center">
+    <h2>Authored</h2>
+  </div>
+
+  <div class="col-xs-4 text-center">
+    <h2>Favorites</h2>
+  </div>
+
+  <div class="col-xs-4 text-center">
+    <h2>Recently Liked</h2>
+  </div>
+</div>
