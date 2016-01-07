@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'users/show', as: 'user'
+  get 'users/show/:id', to: 'users#show', as: 'user'
 
   post 'likes/:haiku_id', to: 'likes#create', as: 'add_like'
 

@@ -28,8 +28,10 @@ class HaikusController < ApplicationController
   # POST /haikus
   # POST /haikus.json
   def create
-    @haiku = Haiku.new(haiku_params)
-
+    user = current_user || User.find(2)
+    @haiku = user.haikus.build(haiku_params)
+    # @haiku = Haiku.new(haiku_params)
+    binding.pry
     respond_to do |format|
       if @haiku.save
         Haiku.make_from_gem
