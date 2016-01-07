@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user
 
   def show
-    @auhtored = @user.haikus
+    @authored = @user.haikus
   end
 
   private

@@ -1,7 +1,9 @@
 <div class="row">
   <center>
     <h1><%=current_user.name%></h1>
-    <img src=<%="http://graph.facebook.com/#{current_user.uid}/picture?type=large"%>
+    <div class="round-corners">
+      <img src=<%="http://graph.facebook.com/#{current_user.uid}/picture?type=large"%>>
+    </div>
   </center>
 </div>
 
@@ -9,6 +11,10 @@
 
   <div class="col-xs-4 text-center">
     <h2>Authored</h2>
+    <% @authored.each do |haiku| %>
+      <br>
+      <%= render partial: 'haikus/show', locals: {haiku: haiku} %>
+    <% end %>
   </div>
 
   <div class="col-xs-4 text-center">

@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
   def create
-    binding.pry
     user = User.from_omniauth(env["omniauth.auth"])
     session[:user_id] = user.id
     session[:user_info]={small_image:env["omniauth.auth"][:info][:image]}
