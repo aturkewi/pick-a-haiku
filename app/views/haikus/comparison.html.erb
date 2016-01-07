@@ -6,7 +6,8 @@
   <div id='compare_haikus'>
   </div>
   <div class="row text-center">
-    <%= button_to "These Are Both Terrible", comparison_path, method:'get', class:'btn btn-warning'%>
+    <!-- button_to "These Are Both Terrible", comparison_path, method:'get', remote:true, form:{ "data-type" => "json"}, class:'btn btn-warning get-haikus' -->
+    <a href="/haikus/comparison.json" data-remote="true" class='btn btn-warning get-haikus'>There Are Both Terrible</a>
   </div>
 </div>
 
