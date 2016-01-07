@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @authored = @user.haikus
+    @liked = Haiku.get_liked_by_user(@user.id)
   end
 
   private

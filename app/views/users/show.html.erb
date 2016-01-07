@@ -23,5 +23,9 @@
 
   <div class="col-xs-4 text-center">
     <h2>Recently Liked</h2>
+    <% @liked.each do |haiku| %>
+      <br>
+      <%= render partial: 'haikus/show', locals: {haiku: haiku} %>
+    <% end %>
   </div>
 </div>

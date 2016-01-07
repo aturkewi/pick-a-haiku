@@ -31,6 +31,10 @@ class Haiku < ActiveRecord::Base
     end
   end
 
+  def self.get_liked_by_user(user_id)
+    joins(:likes).where("likes.user_id=#{user_id}").order('likes.created_at desc').limit(6)
+  end
+
   def self.make_from_gem
     first_line = HaikuGadget.top_line
     second_line = HaikuGadget.middle_line
