@@ -1,9 +1,7 @@
 <div class="row">
   <center>
     <h1><%=current_user.name%></h1>
-    <div class="round-corners">
-      <img src=<%="http://graph.facebook.com/#{current_user.uid}/picture?type=large"%>>
-    </div>
+    <img src=<%="http://graph.facebook.com/#{current_user.uid}/picture?type=large"%>>
   </center>
 </div>
 
