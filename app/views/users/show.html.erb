@@ -17,6 +17,10 @@
 
   <div class="col-xs-4 text-center">
     <h2>Favorites</h2>
+    <% @favorited.each do |haiku| %>
+      <br>
+      <%= render partial: 'haikus/show', locals: {haiku: haiku} %>
+    <% end %>
   </div>
 
   <div class="col-xs-4 text-center">
