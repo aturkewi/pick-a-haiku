@@ -14,8 +14,8 @@
 class Haiku < ActiveRecord::Base
 
   has_many :likes
+  has_many :favorites
   belongs_to :user
-  # scope :top4,
 
   validates_with SyllableValidator
 

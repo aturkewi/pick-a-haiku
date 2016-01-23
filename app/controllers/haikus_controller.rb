@@ -1,25 +1,19 @@
 class HaikusController < ApplicationController
   before_action :set_haiku, only: [:show, :edit, :update, :destroy]
 
-  # GET /haikus
-  # GET /haikus.json
   def index
     @haikus = Haiku.top4
   end
 
   def comparison
     @haikus = Haiku.get_two_random_haikus
-    # @haiku1 = haikus[0]
-    # @haiku2 = haikus[1]
     respond_to do |format|
       # binding.pry
       format.html
-      format.json {render json: @haikus}
+      format.json {render json: @haikus, root: false}
     end
   end
 
-
-  # GET /haikus/new
   def new
     @haiku = Haiku.new
   end
@@ -40,23 +34,6 @@ class HaikusController < ApplicationController
       end
     end
   end
-
-
-  # def update
-  #   binding.pry
-  #   @haiku.like
-  #   redirect_to comparison_path
-  # end
-
-  # DELETE /haikus/1
-  # DELETE /haikus/1.json
-  # def destroy
-  #   @haiku.destroy
-  #   respond_to do |format|
-  #     format.html { redirect_to haikus_url, notice: 'Haiku was successfully destroyed.' }
-  #     format.json { head :no_content }
-  #   end
-  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
