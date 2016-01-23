@@ -9,25 +9,35 @@
 
   <div class="col-xs-4 text-center">
     <h2>Authored</h2>
-    <% @authored.each do |haiku| %>
-      <br>
-      <%= render partial: 'haikus/show', locals: {haiku: haiku} %>
-    <% end %>
+    <ul class='list-group'>
+      <% @authored.each do |haiku| %>
+        <li class='list-group-item'>
+          <%= render partial: 'haikus/show', locals: {haiku: haiku} %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 
   <div class="col-xs-4 text-center">
     <h2>Favorites</h2>
-    <% @favorited.each do |haiku| %>
-      <br>
-      <%= render partial: 'haikus/show', locals: {haiku: haiku} %>
-    <% end %>
+    <ul class='list-group'>
+      <% @favorited.each do |haiku| %>
+        <li id="favorite-haiku-#{haiku.id}" class='list-group-item'>
+          <%= render partial: 'haikus/show', locals: {haiku: haiku} %>
+          <img class='favorite' src='/heart-favorited.png'>
+        </li>
+      <% end %>
+    </ul>
   </div>
 
   <div class="col-xs-4 text-center">
     <h2>Recently Liked</h2>
-    <% @liked.each do |haiku| %>
-      <br>
-      <%= render partial: 'haikus/show', locals: {haiku: haiku} %>
-    <% end %>
+    <ul class='list-group'>
+      <% @liked.each do |haiku| %>
+        <li class='list-group-item'>
+          <%= render partial: 'haikus/show', locals: {haiku: haiku} %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </div>

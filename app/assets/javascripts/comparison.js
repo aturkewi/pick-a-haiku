@@ -6,11 +6,18 @@ $(document).on('page:load ready',function(){
   }
 });
 
+function getLastElementOfUrl(url){
+  var urlArray = url.split('/')
+  var length = urlArray.length
+  return urlArray[length-1]
+}
+
 function addHaikus(haikus){
   haikus.forEach(function(haiku){
     addHaiku(haiku);
   });
   getHaikuListener();
+  favoriteListener();
 }
 
 function getHaikuListener(){
@@ -20,12 +27,24 @@ function getHaikuListener(){
   })
 }
 
+function favoriteListener(){
+  $('.favorite').on('click', function(e){
+    var heart = getLastElementOfUrl(this.src);
+    var haikuId = this.parentElement.className.split('-')[1]
+    if (heart == "heart-non-favorited.png"){
+      addToFavorites(haikuId);
+    }else{
+      removeFromFavorites(haikuId);
+    }
+  })
+}
+
 function addFavoriteIcon(haiku){
   var haikuTitle = $(".haiku-"+haiku.id)
   if (haiku.favorited){
-    haikuTitle.append("<img src='/heart-favorited.png'>");
+    haikuTitle.append("<img class='favorite' src='/heart-favorited.png'>");
   }else{
-    haikuTitle.append("<img src='/heart-non-favorited.png'>");
+    haikuTitle.append("<img class='favorite' src='/heart-non-favorited.png'>");
   }
 }
 
@@ -37,9 +56,8 @@ function addHaiku(haiku){
   addFavoriteIcon(haiku)
 }
 
+
 function isComparisonPage(self){
-  var url = self.URL.split('/')
-  var length = url.length
-  var analytics = url[length-1]
-  return (analytics == "comparison")
+  var last_word = getLastElementOfUrl(self.URL)
+  return (last_word == "comparison")
 }
