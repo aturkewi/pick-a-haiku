@@ -20,12 +20,21 @@ function getHaikuListener(){
   })
 }
 
+function addFavoriteIcon(haiku){
+  var haikuTitle = $(".haiku-"+haiku.id)
+  if (haiku.favorited){
+    haikuTitle.append("<img src='/heart-favorited.png'>");
+  }else{
+    haikuTitle.append("<img src='/heart-non-favorited.png'>");
+  }
+}
+
 function addHaiku(haiku){
   var source = $('#haiku-template').html();
   var template = Handlebars.compile(source);
   var haiku_html = template(haiku);
   $('#compare_haikus').append(haiku_html);
-
+  addFavoriteIcon(haiku)
 }
 
 function isComparisonPage(self){
