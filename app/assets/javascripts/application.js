@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require_tree ../../../vendor/assets/javascripts/.
 //= require bootstrap.min
+//= require favorites
 //= require_tree .
