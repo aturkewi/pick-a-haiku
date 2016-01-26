@@ -1,9 +1,13 @@
 function favorited(heart){
-  return (heart.className.indexOf('heart-favorited') != -1)
+  return (heart.className.indexOf('heart-favorited') != -1);
+}
+
+function getHaikuId(heart){
+  return heart.parentElement.id.split('-')[1];
 }
 
 function sendFavoriteRequest(heart){
-  var haikuId = heart.parentElement.className.split('-')[1]
+  var haikuId = getHaikuId(heart);
   if (favorited(heart)){
     removeFromFavorites(haikuId);
   }else{
@@ -38,7 +42,7 @@ function removeFromFavorites(haikuId){
 }
 
 function addFavoriteIcon(haiku){
-  var haikuTitle = $(".haiku-"+haiku.id)
+  var haikuTitle = $("#haiku-"+haiku.id)
   if (haiku.favorited){
     haikuTitle.append("<img class='heart-favorited favorite'/>");
   }else{

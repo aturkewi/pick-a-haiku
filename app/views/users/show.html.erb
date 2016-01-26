@@ -22,9 +22,9 @@
     <h2>Favorites</h2>
     <ul class='list-group'>
       <% @favorited.each do |haiku| %>
-        <li id="favorite-haiku-#{haiku.id}" class='list-group-item'>
+        <li id=<%="haiku-#{haiku.id}"%> class='list-group-item'>
           <%= render partial: 'haikus/show', locals: {haiku: haiku} %>
-          <img class='favorite' src='/heart-favorited.png'>
+          <img class='heart-favorited favorite' src='/heart-favorited.png'>
         </li>
       <% end %>
     </ul>
