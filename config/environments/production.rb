@@ -76,4 +76,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # add all .js files in the assets/javascript folder to be compiled
+  config.assets.precompile += %w( *.js )
+
 end

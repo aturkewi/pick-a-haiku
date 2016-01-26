@@ -1,5 +1,5 @@
 .heart-favorited, .heart-non-favorited{
-	background: url(sprites.png) no-repeat;
+	background: url(/favorite-sprite.png) no-repeat;
 }
 
 .heart-favorited{
@@ -13,4 +13,3 @@
 	width: 24px;
 	height: 24px;
 }
-

@@ -12,9 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-readyselector
 //= require turbolinks
-//= require_tree ../../../vendor/assets/javascripts/.
+//= require bootstrap
 //= require bootstrap.min
-//= require path_parser
+//= require handlebars-v4.0.5
 //= require favorites
-//= require_tree .
+//
