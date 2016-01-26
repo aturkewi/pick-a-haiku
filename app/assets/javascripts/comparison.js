@@ -27,37 +27,6 @@ function getHaikuListener(){
   })
 }
 
-// function favoriteListener(){
-//   $('img.favorite').on('click', function(e){
-//     var heart = getLastElementOfUrl(this.src);
-//     var haikuId = this.parentElement.className.split('-')[1]
-//     if (heart == "heart-non-favorited.png"){
-//       addToFavorites(haikuId);
-//     }else{
-//       removeFromFavorites(haikuId);
-//     }
-//   })
-// }
-
-// function addToFavorites(haikuId){
-//   $.post("/favorites/" + haikuId,function(){
-//
-//   })
-// }
-
-// function removeFromFavorites(haikuId){
-//
-// }
-//
-// function addFavoriteIcon(haiku){
-//   var haikuTitle = $(".haiku-"+haiku.id)
-//   if (haiku.favorited){
-//     haikuTitle.append("<img class='favorite' src='/heart-favorited.png'>");
-//   }else{
-//     haikuTitle.append("<img class='favorite' src='/heart-non-favorited.png'>");
-//   }
-// }
-
 function addHaiku(haiku){
   var source = $('#haiku-template').html();
   var template = Handlebars.compile(source);
@@ -68,6 +37,8 @@ function addHaiku(haiku){
 
 
 function isComparisonPage(self){
-  var last_word = getLastElementOfUrl(self.URL)
-  return (last_word == "comparison")
+  // var last_word = getLastElementOfUrl(self.URL)
+  var location = new PathParser();
+  location.init(self.URL);
+  return (location.getLastElement() == "comparison");
 }

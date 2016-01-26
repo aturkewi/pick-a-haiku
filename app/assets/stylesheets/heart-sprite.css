@@ -1,0 +1,16 @@
+.heart-favorited, .heart-non-favorited{
+	background: url(sprites.png) no-repeat;
+}
+
+.heart-favorited{
+	background-position: -26px 0;
+	width: 24px;
+	height: 24px;
+}
+
+.heart-non-favorited{
+	background-position: 0 0;
+	width: 24px;
+	height: 24px;
+}
+

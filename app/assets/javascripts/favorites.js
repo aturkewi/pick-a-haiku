@@ -1,8 +1,13 @@
 function favoriteListener(){
   $('img.favorite').on('click', function(e){
-    var heart = getLastElementOfUrl(this.src);
+    // var heart = getLastElementOfUrl(this.src);
+    var heart = new PathParser();
+    heart.init(this.src);
+    var heartType = heart.getLastElement();
     var haikuId = this.parentElement.className.split('-')[1]
-    if (heart == "heart-non-favorited.png"){
+    var url = self.location.pathname
+    debugger;
+    if (heartType == "heart-non-favorited.png"){
       addToFavorites(haikuId);
     }else{
       removeFromFavorites(haikuId);
