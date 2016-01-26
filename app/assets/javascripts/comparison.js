@@ -1,10 +1,15 @@
 $('page:load ready',function(){
-// $(".haikus.comparison").ready(function(){
-  // return alert('i am on the comparison page')
   $.getJSON('/haikus/comparison', function(haikus){
     addHaikus(haikus);
   })
 });
+
+function favoriteListener(){
+  $('img.favorite').on('click', function(e){
+    sendFavoriteRequest(this);
+    toggleFavorite(this);
+  })
+}
 
 function addHaikus(haikus){
   haikus.forEach(function(haiku){
