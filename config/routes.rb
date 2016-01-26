@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   post 'favorites/:haiku_id', to: 'favorites#create'
+  delete '/favorites/:haiku_id', to: 'favorites#destroy'
 
   get 'users/show/:id', to: 'users#show', as: 'user'
 

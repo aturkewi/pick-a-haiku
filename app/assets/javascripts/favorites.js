@@ -3,10 +3,11 @@ function favorited(heart){
 }
 
 function sendFavoriteRequest(heart){
+  var haikuId = heart.parentElement.className.split('-')[1]
   if (favorited(heart)){
-    removeFromFavorites(heart);
+    removeFromFavorites(haikuId);
   }else{
-    addToFavorites(heart);
+    addToFavorites(haikuId);
   }
 }
 
