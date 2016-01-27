@@ -26,14 +26,14 @@ function toggleFavorite(heart){
 }
 
 function addToFavorites(haikuId){
+  var success = true
   $.post("/favorites/" + haikuId,function(){
-    // flass message?
-    return true
   })
   .fail(function(data){
     alert("You must be logged in to perform this action.");
-    return false;
+    var success = false;
   })
+  return success;
 }
 
 function removeFromFavorites(haikuId){
@@ -42,13 +42,10 @@ function removeFromFavorites(haikuId){
       type: 'DELETE',
       success: function() {
         // flash message?
-        return true
+        success = true
       }
   })
-  .fail(function(data){
-    alert("You must be logged in to perform this action.");
-    return false;
-  })
+  return true
 }
 
 function addFavoriteIcon(haiku){
