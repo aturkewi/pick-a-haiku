@@ -9,9 +9,9 @@ function getHaikuId(heart){
 function sendFavoriteRequest(heart){
   var haikuId = getHaikuId(heart);
   if (favorited(heart)){
-    removeFromFavorites(haikuId);
+    return removeFromFavorites(haikuId);
   }else{
-    addToFavorites(haikuId);
+    return addToFavorites(haikuId);
   }
 }
 
@@ -28,6 +28,11 @@ function toggleFavorite(heart){
 function addToFavorites(haikuId){
   $.post("/favorites/" + haikuId,function(){
     // flass message?
+    return true
+  })
+  .fail(function(data){
+    alert("You must be logged in to perform this action.");
+    return false;
   })
 }
 
@@ -37,8 +42,13 @@ function removeFromFavorites(haikuId){
       type: 'DELETE',
       success: function() {
         // flash message?
+        return true
       }
-  });
+  })
+  .fail(function(data){
+    alert("You must be logged in to perform this action.");
+    return false;
+  })
 }
 
 function addFavoriteIcon(haiku){
