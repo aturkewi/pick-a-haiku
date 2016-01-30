@@ -8,7 +8,7 @@ function removeFavoriteFromDom(favoriteLi){
 
 function favoriteListener(){
   $('img.favorite').on('click', function(e){
-    sendFavoriteRequest(this);
-    removeFavoriteFromDom(this);
+    sendFavoriteRequest(this, removeFavoriteFromDom);
+    // removeFavoriteFromDom(this);
   })
 }

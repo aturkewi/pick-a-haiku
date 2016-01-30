@@ -6,12 +6,12 @@ function getHaikuId(heart){
   return heart.parentElement.id.split('-')[1];
 }
 
-function sendFavoriteRequest(heart){
+function sendFavoriteRequest(heart, completeOnDelete){
   var haikuId = getHaikuId(heart);
   if (favorited(heart)){
-    return removeFromFavorites(haikuId);
+    return removeFromFavorites(haikuId, completeOnDelete, heart);
   }else{
-    return addToFavorites(haikuId);
+    return addToFavorites(haikuId, heart);
   }
 }
 
@@ -25,27 +25,21 @@ function toggleFavorite(heart){
   }
 }
 
-function addToFavorites(haikuId){
-  var success = true
-  $.post("/favorites/" + haikuId,function(){
+function addToFavorites(haikuId, heart){
+  $.post("/favorites/" + haikuId,function(requestSuccess){
+    toggleFavorite(heart)
   })
   .fail(function(data){
     alert("You must be logged in to perform this action.");
-    var success = false;
   })
-  return success;
 }
 
-function removeFromFavorites(haikuId){
+function removeFromFavorites(haikuId, completeOnDelete, heart){
   $.ajax({
       url: '/favorites/'+haikuId,
       type: 'DELETE',
-      success: function() {
-        // flash message?
-        success = true
-      }
+      success: completeOnDelete(heart)
   })
-  return true
 }
 
 function addFavoriteIcon(haiku){

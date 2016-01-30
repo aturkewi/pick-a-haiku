@@ -6,10 +6,7 @@ $('page:load ready',function(){
 
 function favoriteListener(){
   $('img.favorite').on('click', function(e){
-    var success = sendFavoriteRequest(this);
-    if (success){
-      toggleFavorite(this);
-    }
+    sendFavoriteRequest(this, toggleFavorite);
   })
 }
 
